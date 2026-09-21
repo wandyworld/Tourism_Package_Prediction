@@ -36,7 +36,6 @@ preprocessor = make_column_transformer(
 xgb_model = xgb.XGBClassifier(scale_pos_weight=class_weight, random_state=42)
 
 # Define hyperparameter grid
-# Fill in suitable values for each parameter based on your understanding of XGBoost tuning.
 param_grid = {
     'xgbclassifier__n_estimators': [75, 125],        # Number of boosting trees. More trees can improve performance but increase training time.
     'xgbclassifier__max_depth': [3, 4],           # Maximum depth of each tree. Higher values increase model complexity and risk of overfitting.
