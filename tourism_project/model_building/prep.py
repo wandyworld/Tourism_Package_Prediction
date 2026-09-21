@@ -14,10 +14,6 @@ df["Gender"] = df["Gender"].str.strip().replace({"Fe Male": "Female"})
 # 3. Report missing values (this dataset has none, so no imputation is required)
 print("Total missing values:", int(df.isna().sum().sum()))
 
-# NOTE: categorical columns are intentionally left as raw strings.
-# The training pipeline one-hot-encodes them, and the Streamlit app also sends
-# raw category values. Encoding them here (e.g. LabelEncoder) would make training
-# and serving use different representations, silently breaking predictions.
 
 target = "ProdTaken"  # column to predict: 1 if the customer purchased the package, else 0
 X = df.drop(columns=[target])
