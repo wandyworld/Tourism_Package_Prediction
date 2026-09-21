@@ -69,7 +69,7 @@ with mlflow.start_run():
     best_model = grid_search.best_estimator_
 
     # Set classification threshold
-    classification_threshold = 0.45    # Must match the threshold in app.py. Choose a classification threshold between 0 and 1. Lower thresholds typically increase recall and decrease precision and vice versa. Experiment with different values to find the best trade-off.
+    classification_threshold = 0.45    # Must match the threshold in app.py. 
 
     # Make predictions on the training and test data
     y_pred_train_proba = best_model.predict_proba(Xtrain)[:, 1]
